@@ -29,7 +29,7 @@ const slice = createSlice({
     pokemon: [],
     loading: false,
   },
-  reducers: { //sync actions
+  reducers: {//sync actions
     incremented,
     decremented,
   },
