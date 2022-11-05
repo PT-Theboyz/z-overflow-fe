@@ -30,6 +30,10 @@ const styles = {
       margin-left: 8px;
       margin-right: 8px;
     }
+
+    .btn {
+      background-color: #fe4401;
+    }
   `,
 }
 
