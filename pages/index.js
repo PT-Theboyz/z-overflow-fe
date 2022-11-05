@@ -1,5 +1,5 @@
 import TopNav from "../components/elements/TopNav";
-import { Paper } from "@mui/material";
+import { Paper, Button } from "@mui/material";
 import styles from './styles'
 import Link from 'next/link'
 
@@ -29,6 +29,10 @@ export default function Home() {
           </Paper>
         </aside>
         <div className="body">
+          <Paper className="create-post" elevation={0}>
+            <span>Ada sesuatu yang kamu belu tahu? Tanyakan hal itu kepada ahlinya sekarang!</span>
+            <Button variant="contained">Ask Question</Button>
+          </Paper>
           <div className="questions">
             {arr.map(val => (
               <Paper className="question" key={val} elevation={0}>
@@ -37,7 +41,7 @@ export default function Home() {
                   <div className="answers">0 Answer</div>
                 </section>
                 <section className="description">
-                  <Link href={`/question`}>
+                  <Link href={`/question/id`}>
                     <div className="title">
                       test pertanyaan 1
                     </div>

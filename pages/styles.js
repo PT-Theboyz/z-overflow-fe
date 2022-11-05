@@ -1,4 +1,5 @@
 import { css } from "@emotion/react"
+import { orange } from '../styles/color';
 
 const styles = {
   //buat key sesuai kebutuhan tag atau yang lainnya
@@ -12,6 +13,27 @@ const styles = {
 
     .body {
       width: 80%;
+    }
+
+    .create-post {
+      display: flex;
+      padding: 20px;
+      width: 100%;
+      margin-bottom: 24px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .create-post > span {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .create-post > button {
+      background-color: ${orange};
+      text-transform: none;
+      font-weight: 500;
+      padding: 8px;
     }
 
     .MuiPaper-root {
@@ -91,11 +113,6 @@ const styles = {
 
     .question-tags > span:last-of-type {
       margin-right: 0px;
-    }
-  
-    .stats {
-      margin-right: 32px;
-      width: 10%;
     }
   `,
 }

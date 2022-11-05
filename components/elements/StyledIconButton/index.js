@@ -1,9 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { IconButton } from '@mui/material';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 
 function StyledIconButton(props) {
+  const router = useRouter();
+  const handleRoute = () => router.push(props.link);
+  if (props.link) {
+    return (
+      <a className="link" onClick={handleRoute}>
+        <IconButton className={props.className}>
+          {props.children}
+        </IconButton>
+      </a>
+    )
+  }
   return (
    <IconButton className={props.className}>
     {props.children}
@@ -28,13 +40,15 @@ StyledIconButton.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   height: PropTypes.number,
+  link: PropTypes.string,
   width: PropTypes.number,
 };
 
 StyledIconButton.defaultProps = {
   active: false,
   children: null,
-  className: '',
+  className: "",
   height: 0,
+  link: "",
   width: 0,
 };
