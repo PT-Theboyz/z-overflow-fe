@@ -1,4 +1,4 @@
-export default function Question() {
+export default function Questions() {
   return (
     <>
       ini tempat question

@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import Profile from '../Profile';
-import { IconButton, TextField, InputAdornment } from '@mui/material';
+import { TextField, InputAdornment } from '@mui/material';
 import { Home, Notifications, Search } from '@mui/icons-material';
 import StyledIconButton from '../StyledIconButton';
+import Link from 'next/link'
 
 export default function TopNav() {
   return (
@@ -13,9 +14,9 @@ export default function TopNav() {
         Z-Overflow
       </div>
       <div className="action-fields">
-        <StyledIconButton>
-          <Home />
-        </StyledIconButton>
+          <StyledIconButton link="/">
+            <Home />
+          </StyledIconButton>
         <TextField
           className="textfield"
           InputProps={{
