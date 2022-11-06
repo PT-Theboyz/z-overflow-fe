@@ -12,7 +12,7 @@ const styles = {
     }
 
     .body {
-      width: 80%;
+      width: 60%;
     }
 
     .MuiPaper-root {
@@ -92,39 +92,6 @@ const styles = {
       display: flex;
     }
 
-    .vote {
-      text-align: center;
-      margin-right: 12px;
-    }
-
-    .vote > .total {
-      font-size: 22px;
-      font-weight: 500;
-    }
-    
-    .upvote {
-      cursor: pointer;
-      width: 78px;
-      height: 78px;
-      margin-bottom: -18px;
-      margin-top: -4px;
-    }
-
-    .upvote:hover {
-      color: ${orange};
-    }
-
-    .downvote:hover {
-      color: ${orange};
-    }
-
-    .downvote {
-      cursor: pointer;
-      width: 78px;
-      height: 78px;
-      margin-top: -12px
-    }
-
     .detail-tags {
       display: flex;
       flex-wrap: wrap;
@@ -202,6 +169,26 @@ const styles = {
     pre {
       background-color: #f7f7f7;
       padding: 8px;
+    }
+
+    .your-answer {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .editor {
+      margin-top: 42px;
+    }
+
+    .action {
+      margin-top: 32px;
+    }
+
+    .action > button {
+      background-color: ${orange};
+      text-transform: none;
+      font-weight: 500;
     }
   `,
 }

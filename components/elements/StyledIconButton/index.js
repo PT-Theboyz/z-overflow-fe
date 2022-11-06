@@ -2,18 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { IconButton } from '@mui/material';
 import styled from '@emotion/styled';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 function StyledIconButton(props) {
-  const router = useRouter();
-  const handleRoute = () => router.push(props.link);
   if (props.link) {
     return (
-      <a className="link" onClick={handleRoute}>
+      <Link href={props.link} passHref>
         <IconButton className={props.className}>
           {props.children}
         </IconButton>
-      </a>
+      </Link>
     )
   }
   return (
