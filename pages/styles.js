@@ -6,19 +6,17 @@ const styles = {
   root: css`
     display: flex;
     padding: 18px 32px;
-
     aside {
       width: 20%;
     }
 
     .body {
-      width: 80%;
+      width: 60%;
     }
 
     .create-post {
       display: flex;
       padding: 20px;
-      width: 100%;
       margin-bottom: 24px;
       justify-content: space-between;
       align-items: center;
@@ -33,7 +31,7 @@ const styles = {
       background-color: ${orange};
       text-transform: none;
       font-weight: 500;
-      padding: 8px;
+      padding: 8px 12px;
     }
 
     .MuiPaper-root {
@@ -70,7 +68,6 @@ const styles = {
     .question {
       display: flex;
       padding: 20px;
-      width: 100%;
       margin-bottom: 24px;
     }
 
@@ -113,6 +110,11 @@ const styles = {
 
     .question-tags > span:last-of-type {
       margin-right: 0px;
+    }
+  
+    .stats {
+      margin-right: 32px;
+      width: 10%;
     }
   `,
 }

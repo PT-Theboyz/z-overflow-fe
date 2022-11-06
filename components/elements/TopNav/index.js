@@ -7,14 +7,14 @@ import { Home, Notifications, Search } from '@mui/icons-material';
 import StyledIconButton from '../StyledIconButton';
 import Link from 'next/link'
 
-export default function TopNav() {
+export default function TopNav(props) {
   return (
     <nav css={styles.nav}>
       <div className="title">
         Z-Overflow
       </div>
       <div className="action-fields">
-          <StyledIconButton link="/">
+          <StyledIconButton active={props.page === ''} link="/">
             <Home />
           </StyledIconButton>
         <TextField
@@ -34,6 +34,10 @@ export default function TopNav() {
   )
 }
 
-TopNav.propTypes = {};
+TopNav.propTypes = {
+  page: PropTypes.string,
+};
 
-TopNav.defaultProps = {};
+TopNav.defaultProps = {
+  page: ''
+};

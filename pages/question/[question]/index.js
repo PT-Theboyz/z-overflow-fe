@@ -1,12 +1,15 @@
 import TopNav from "../../../components/elements/TopNav";
-import { Paper, Button, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
-import { ArrowDropUp, ArrowDropDown } from '@mui/icons-material'
+import { Paper, Button, FormControl, Select, MenuItem } from "@mui/material";
+import EditorAnswer from "../../../components/fragments/EditorAnswer"; //in fragments
+import Votes from "../../../components/elements/Votes";
 import styles from './styles';
+import PropTypes from 'prop-types';
+import { useState } from "react";
 
 export default function Question() {
   return (
     <>
-      <TopNav />
+      <TopNav page="question" />
       <main css={styles.root}>
         <aside>
           <Paper className="popular-tags" elevation={0}>
@@ -49,13 +52,7 @@ export default function Question() {
               </Button>
             </header>
             <div className="question-detail">
-              <div className="vote">
-                <ArrowDropUp className="upvote" />
-                <div className="total">
-                  120
-                </div>
-                <ArrowDropDown className="downvote" />
-              </div>
+              <Votes total={120} />
               <div className="detail">
                 <p>I&lsquo;m trying to write a function that does the following:</p>
                 <ul>
@@ -104,28 +101,11 @@ function permute(input) {
                 <div className="total-answer">1 Answer</div>
                 <div className="sorting">
                   sorted by :{' '}
-                  <FormControl className="formcontrol-select" sx={{ m: 1, minWidth: 120 }} size="small">
-                    <Select
-                      labelId="demo-select-small"
-                      id="demo-select-small"
-                      // value={age}
-                      // onChange={handleChange}
-                    >
-                      <MenuItem value={10}>Vote tertinggi</MenuItem>
-                      <MenuItem value={20}>Jawaban terbaru</MenuItem>
-                      <MenuItem value={30}>Jawaban terlama</MenuItem>
-                    </Select>
-                  </FormControl>
+                  <Sorting />
                 </div>
               </header>
               <div className="answer-detail">
-                <div className="vote">
-                  <ArrowDropUp className="upvote" />
-                  <div className="total">
-                    69
-                  </div>
-                  <ArrowDropDown className="downvote" />
-                </div>
+                <Votes total={69} />
                 <div className="detail">
                   <p>Little late, but like to add a slightly more elegant version here. Can be any array...</p>
                   <pre>
@@ -197,9 +177,54 @@ function permute(input) {
                 </div>
               </div>
             </div>
+            <div className="editor">
+              <div className="your-answer">Your Answer</div>
+              <EditorAnswer />
+            </div>
           </Paper>
         </div>
       </main>
     </>
   )
 }
+
+Question.defaultProps = {};
+
+Question.propTypes = {};
+
+function Sorting(props) {
+  const [sort, setSort] = useState(10)
+
+  const handleChange = (e) => {
+    setSort(e.target.value);
+  }
+  return (
+    <FormControl className="formcontrol-select" sx={{ m: 1, minWidth: 120 }} size="small">
+      <Select
+        labelId="demo-select-small"
+        id="demo-select-small"
+        value={sort}
+        onChange={handleChange}
+      >
+        <MenuItem value={10}>Vote tertinggi</MenuItem>
+        <MenuItem value={20}>Jawaban terbaru</MenuItem>
+        <MenuItem value={30}>Jawaban terlama</MenuItem>
+      </Select>
+    </FormControl>
+  );
+}
+
+Sorting.defaultProps = {
+  
+};
+
+Sorting.propTypes = {
+
+};
+
+
+/*
+
+  pages container
+    children statefull
+*/
